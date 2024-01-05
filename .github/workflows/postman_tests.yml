@@ -8,14 +8,16 @@ on:
   push:
   # Allows you to run this workflow manually from the Actions tab
   
-  work_flows:        
+         
  # Allows you to run this workflow manually from the Actions tab
     
- run-postman-test:
+ workflows:
     # A workflow run is made up of one or more jobs that can run sequentially or in parallel
      # Allows you to run this workflow manually from the Actions tab
 jobs:
   # This workflow contains a single job called "build"
+  run-postman-test:
+      # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -35,10 +37,9 @@ jobs:
             name: install newman
             run: npm install -g newman
            
-            name: run postman tasks
-            run: newman postman\Books.postman_collection.json -e postman\test.postman_environment.json
-            
+           
         
-
+            name: run postman tests
+            run: newman run postman\Books.postman_collection.json -e postman\test.postman_environment.json
 
         
