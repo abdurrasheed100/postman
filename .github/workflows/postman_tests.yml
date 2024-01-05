@@ -26,7 +26,7 @@ jobs:
         uses: action\setup-node@v4
 
         with:
-            node-version: = '18'
+            node-version: = '16'
             
 
             name: install newman
@@ -34,7 +34,7 @@ jobs:
    
            
             name: postman tasks
-            ##run: npm install -g newman:
-                run: run newman postman/Books.postman_collection.json -e postman/test.postman_environment.json
+            #run: npm install -g newman:
+             run: run newman postman/Books.postman_collection.json -e postman/test.postman_environment.json
 
         
